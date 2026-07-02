@@ -3,7 +3,7 @@ document.getElementById('footer-placeholder').innerHTML = `
     <div>
       <div class="brand" style="margin-bottom:14px;">
         <img src="assets/images/logo.svg" alt="Logo" style="width:34px;">
-        <div class="brand-text"><div class="name">AWS STUDENT BUILDER GROUP</div><div class="sub">at [Your Campus Name]</div></div>
+        <div class="brand-text"><div class="name">AWS STUDENT BUILDER GROUP</div><div class="sub">at Graphic Era Hill University</div></div>
       </div>
       <p style="opacity:.8; font-size:14px; max-width:320px;">Turning students into cloud-native engineers, one project at a time — from the heart of the Himalayas.</p>
     </div>
@@ -21,5 +21,5 @@ document.getElementById('footer-placeholder').innerHTML = `
       <li><a href="#" target="_blank">Instagram</a></li>
     </ul></div>
   </div>
-  <div class="footer-bottom">© ${new Date().getFullYear()} AWS Student Builder Group — [Your Campus Name]. Built by student builders.</div>
+  <div class="footer-bottom">© ${new Date().getFullYear()} AWS Student Builder Group — Graphic Era Hill University. Built by student builders.</div>
 `;
