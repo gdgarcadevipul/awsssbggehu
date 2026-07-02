@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | AWS Student Builder Group</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar"><div class="nav-inner">
+  <a href="index.html" class="brand"><img src="assets/images/logo.svg" alt="Logo">
+    <div class="brand-text"><div class="name">AWS STUDENT BUILDER GROUP</div><div class="sub">at [Your Campus Name]</div></div></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="events.html">Events</a></li><li><a href="team.html">Team</a></li>
+    <li><a href="blog.html">Blog</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <div class="nav-right"><button class="theme-toggle">🌙</button><a href="contact.html" class="btn btn-primary">Join Community</a><button class="menu-toggle">☰</button></div>
+</div></nav>
+
+<section class="hero" style="padding-bottom:10px;">
+  <span class="pill">GET IN TOUCH</span>
+  <h1>SAY HELLO TO <br><span class="accent">THE BUILDERS</span></h1>
+  <p class="lead">Partnership inquiries, collaboration ideas, membership questions — we read every message. Typical response within 1-2 business days.</p>
+</section>
+
+<section class="reveal">
+  <div class="container contact-grid">
+
+    <div class="contact-side">
+      <div class="card">
+        <h4 style="margin-bottom:16px; font-size:13px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-muted);">Other Ways to Reach Us</h4>
+        <div class="contact-row"><div class="icon" style="width:32px;height:32px;background:var(--mist);border-radius:8px;display:flex;align-items:center;justify-content:center;">✉️</div>
+          <div><div class="label-sm">Email</div><div class="val">yourgroup@example.com</div></div></div>
+        <div class="contact-row"><div class="icon" style="width:32px;height:32px;background:var(--mist);border-radius:8px;display:flex;align-items:center;justify-content:center;">💼</div>
+          <div><div class="label-sm">LinkedIn</div><div class="val">AWS SBG [Your Campus]</div></div></div>
+      </div>
+      <div class="card">
+        <p><span class="status-dot"></span><strong style="color:#2fbf6e;">ACTIVE TEAM</strong></p>
+        <p style="font-size:13px; color:var(--ink-muted); margin-top:6px;">We typically respond within <strong>1-2 business days</strong>.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 style="margin-bottom:20px;">📩 New Message</h4>
+      <form id="contact-form">
+        <div class="form-row">
+          <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your full name" required></div>
+          <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@example.com" required></div>
+        </div>
+        <div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" name="subject" placeholder="Partnership · Membership · General Inquiry"></div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" maxlength="5000" placeholder="Tell us what's on your mind..." required></textarea>
+          <div class="char-count" id="char-count">0/5000</div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">🛩️ Send Message</button>
+        <div class="form-status" id="form-status"></div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer id="footer-placeholder"></footer>
+<script src="js/main.js"></script><script src="js/footer.js"></script>
+</body></html>
