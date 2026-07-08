@@ -8,8 +8,8 @@
 <body>
     
 <nav class="navbar"><div class="nav-inner">
-  <a href="index.html" class="brand"><img src="assets/images/logo.svg" alt="Logo">
-    <div class="brand-text"><div class="name">AWS STUDENT BUILDER GROUP</div><div class="sub">at [Your Campus Name]</div></div></a>
+  <a href="index.html" class="brand"><img src="assets/images/logo.svg" alt="Logo" onerror="this.style.display='none'">
+    <div class="brand-text"><div class="name">AWS STUDENT BUILDER GROUP</div><div class="sub">at Graphic Era Hill University — Bhimtal Campus</div></div></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
     <li><a href="events.html">Events</a></li><li><a href="team.html">Team</a></li>
@@ -25,16 +25,33 @@
 </section>
 
 <section class="reveal">
-  <div class="container gallery-grid">
-    <!-- Add photos to assets/images/gallery/ using event-01.jpg, event-02.jpg, etc. -->
-    <div class="gallery-item"><img src="assets/images/gallery/event-01.jpg" data-fallback="Add photo: event-01.jpg" alt=""><div class="overlay">Workshop Day</div></div>
-    <div class="gallery-item"><img src="assets/images/gallery/event-02.jpg" data-fallback="Add photo: event-02.jpg" alt=""><div class="overlay">Cloud Bootcamp</div></div>
-    <div class="gallery-item"><img src="assets/images/gallery/event-03.jpg" data-fallback="Add photo: event-03.jpg" alt=""><div class="overlay">Hackathon</div></div>
-    <div class="gallery-item"><img src="assets/images/gallery/event-04.jpg" data-fallback="Add photo: event-04.jpg" alt=""><div class="overlay">Guest Talk</div></div>
-    <div class="gallery-item"><img src="assets/images/gallery/event-05.jpg" data-fallback="Add photo: event-05.jpg" alt=""><div class="overlay">Team Meetup</div></div>
-    <div class="gallery-item"><img src="assets/images/gallery/event-06.jpg" data-fallback="Add photo: event-06.jpg" alt=""><div class="overlay">Certification Drive</div></div>
-    <div class="gallery-item"><img src="assets/images/gallery/event-07.jpg" data-fallback="Add photo: event-07.jpg" alt=""><div class="overlay">Cloud Summit</div></div>
-    <div class="gallery-item"><img src="assets/images/gallery/event-08.jpg" data-fallback="Add photo: event-08.jpg" alt=""><div class="overlay">Award Ceremony</div></div>
+  <div class="container">
+    
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all" data-target-container=".gallery-grid">All Photos</button>
+      <button class="filter-btn" data-filter="workshop" data-target-container=".gallery-grid">Workshops</button>
+      <button class="filter-btn" data-filter="hackathon" data-target-container=".gallery-grid">Hackathons</button>
+      <button class="filter-btn" data-filter="campus" data-target-container=".gallery-grid">Campus</button>
+    </div>
+
+    <!-- 
+      HOW TO ADD PHOTOS:
+      1. Drop photo in assets/images/gallery/
+      2. Duplicate one of the <div class="gallery-item"> blocks below
+      3. Update the img src, data-fallback text, and the text inside <div class="overlay">
+      4. Set data-category to "workshop", "hackathon", or "campus" for filtering
+    -->
+
+    <div class="gallery-grid">
+      <div class="gallery-item filter-item" data-category="workshop"><img src="assets/images/gallery/event-01.jpg" data-fallback="Add photo: event-01.jpg" alt=""><div class="overlay">Workshop Day</div></div>
+      <div class="gallery-item filter-item" data-category="workshop"><img src="assets/images/gallery/event-02.jpg" data-fallback="Add photo: event-02.jpg" alt=""><div class="overlay">Cloud Bootcamp</div></div>
+      <div class="gallery-item filter-item" data-category="hackathon"><img src="assets/images/gallery/event-03.jpg" data-fallback="Add photo: event-03.jpg" alt=""><div class="overlay">Hackathon</div></div>
+      <div class="gallery-item filter-item" data-category="campus"><img src="assets/images/gallery/event-04.jpg" data-fallback="Add photo: event-04.jpg" alt=""><div class="overlay">Guest Talk</div></div>
+      <div class="gallery-item filter-item" data-category="campus"><img src="assets/images/gallery/event-05.jpg" data-fallback="Add photo: event-05.jpg" alt=""><div class="overlay">Team Meetup</div></div>
+      <div class="gallery-item filter-item" data-category="workshop"><img src="assets/images/gallery/event-06.jpg" data-fallback="Add photo: event-06.jpg" alt=""><div class="overlay">Certification Drive</div></div>
+      <div class="gallery-item filter-item" data-category="campus"><img src="assets/images/gallery/event-07.jpg" data-fallback="Add photo: event-07.jpg" alt=""><div class="overlay">Cloud Summit</div></div>
+      <div class="gallery-item filter-item" data-category="campus"><img src="assets/images/gallery/event-08.jpg" data-fallback="Add photo: event-08.jpg" alt=""><div class="overlay">Award Ceremony</div></div>
+    </div>
   </div>
 </section>
 

@@ -7,8 +7,8 @@
 </head>
 <body>
 <nav class="navbar"><div class="nav-inner">
-  <a href="index.html" class="brand"><img src="assets/images/logo.svg" alt="Logo">
-    <div class="brand-text"><div class="name">AWS STUDENT BUILDER GROUP</div><div class="sub">at [Your Campus Name]</div></div></a>
+  <a href="index.html" class="brand"><img src="assets/images/logo.svg" alt="Logo" onerror="this.style.display='none'">
+    <div class="brand-text"><div class="name">AWS STUDENT BUILDER GROUP</div><div class="sub">at Graphic Era Hill University — Bhimtal Campus</div></div></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
     <li><a href="events.html">Events</a></li><li><a href="team.html">Team</a></li>
@@ -25,13 +25,72 @@
 
 <section class="reveal">
   <div class="container grid grid-3">
-    <div class="card"><div class="icon"></div><h3>Getting Started with AWS Free Tier</h3><p>A step-by-step guide for first-year students setting up their first cloud account safely.</p></div>
-    <div class="card"><div class="icon"></div><h3>Our First Hackathon: Lessons Learned</h3><p>What worked, what didn't, and how we'll run it better next time.</p></div>
-    <div class="card"><div class="icon"></div><h3>Why Every CS Student Should Learn DevOps</h3><p>A member's perspective on why CI/CD skills matter early in your career.</p></div>
+    
+    <div class="blog-card">
+      <img src="assets/images/gallery/event-01.jpg" data-fallback="Thumbnail" class="blog-card-img" alt="Blog post thumbnail">
+      <div class="blog-card-body">
+        <span class="blog-category">AWS</span>
+        <h3 style="margin-bottom: 12px;">Getting Started with AWS Free Tier — A Guide for GEHU Students</h3>
+        <p style="font-size: 14px; color: var(--ink-muted); margin-bottom: 20px;">A step-by-step guide for first-year students setting up their first cloud account safely without incurring unexpected bills.</p>
+        <div class="blog-meta">
+          <img src="assets/images/team/core/member-01.jpg" data-fallback="Author" alt="Author">
+          <div class="blog-meta-info">
+            <div><strong>Student Builder</strong></div>
+            <div>Oct 12, 2026 • 5 min read</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="assets/images/gallery/event-02.jpg" data-fallback="Thumbnail" class="blog-card-img" alt="Blog post thumbnail">
+      <div class="blog-card-body">
+        <span class="blog-category">DevOps</span>
+        <h3 style="margin-bottom: 12px;">Why Every CS Student Should Learn Cloud Computing</h3>
+        <p style="font-size: 14px; color: var(--ink-muted); margin-bottom: 20px;">A perspective on why CI/CD and cloud skills matter early in your career and how they set you apart in interviews.</p>
+        <div class="blog-meta">
+          <img src="assets/images/team/core/member-02.jpg" data-fallback="Author" alt="Author">
+          <div class="blog-meta-info">
+            <div><strong>Student Builder</strong></div>
+            <div>Nov 05, 2026 • 4 min read</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="assets/images/gallery/event-03.jpg" data-fallback="Thumbnail" class="blog-card-img" alt="Blog post thumbnail">
+      <div class="blog-card-body">
+        <span class="blog-category">Community</span>
+        <h3 style="margin-bottom: 12px;">What is AWS Student Builder Group? Our Story at GEHU</h3>
+        <p style="font-size: 14px; color: var(--ink-muted); margin-bottom: 20px;">How we transitioned to the new AWS Student Builder Group structure and our vision for the campus tech ecosystem.</p>
+        <div class="blog-meta">
+          <img src="assets/images/team/leadership/club-lead.jpg" data-fallback="Author" alt="Author">
+          <div class="blog-meta-info">
+            <div><strong>Club Lead</strong></div>
+            <div>Dec 01, 2026 • 6 min read</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-  <p style="text-align:center; color:var(--ink-muted); margin-top:20px; font-size:13px;">
-    Replace these with real posts, or later wire this page to Markdown files / a headless CMS.
-  </p>
+</section>
+
+<section class="reveal" style="background:var(--mist); text-align: center; padding: 60px 24px;">
+  <div class="container" style="max-width: 600px;">
+    <h3 style="margin-bottom: 16px;">Subscribe to Builder Updates</h3>
+    <p style="color: var(--ink-muted); margin-bottom: 24px;">Get our latest tutorials, event recaps, and cloud resources delivered straight to your inbox.</p>
+    
+    <form id="contact-form" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+      <input type="email" name="email" placeholder="student@gehu.ac.in" required style="flex: 1; min-width: 200px; padding: 12px 16px; border-radius: 30px;">
+      <input type="hidden" name="subject" value="Newsletter Signup">
+      <input type="hidden" name="name" value="Subscriber">
+      <input type="hidden" name="message" value="Please add me to the newsletter.">
+      <button type="submit" class="btn btn-primary" style="border-radius: 30px; padding: 12px 24px;">Subscribe</button>
+    </form>
+    <div id="form-status" class="form-status" style="margin-top: 16px;"></div>
+  </div>
 </section>
 
 <footer id="footer-placeholder"></footer>

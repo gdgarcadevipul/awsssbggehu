@@ -7,8 +7,8 @@
 </head>
 <body>
 <nav class="navbar"><div class="nav-inner">
-  <a href="index.html" class="brand"><img src="assets/images/logo.svg" alt="Logo">
-    <div class="brand-text"><div class="name">AWS STUDENT BUILDER GROUP</div><div class="sub">at [Your Campus Name]</div></div></a>
+  <a href="index.html" class="brand"><img src="assets/images/logo.svg" alt="Logo" onerror="this.style.display='none'">
+    <div class="brand-text"><div class="name">AWS STUDENT BUILDER GROUP</div><div class="sub">at Graphic Era Hill University — Bhimtal Campus</div></div></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
     <li><a href="events.html" class="active">Events</a></li><li><a href="team.html">Team</a></li>
@@ -21,29 +21,79 @@
   <span class="pill">WHAT'S HAPPENING</span>
   <h1>UPCOMING & PAST <span class="accent">EVENTS</span></h1>
   <p class="lead">Workshops, hackathons, and cloud certification drives run by student builders, for student builders.</p>
+  
+  <div style="margin-top: 24px;">
+    <a href="#" class="btn btn-primary" style="font-size: 14px;">View All Events on Meetup ↗</a>
+  </div>
 </section>
 
 <section class="reveal">
-  <div class="container grid grid-3">
-    <div class="card">
-      <div class="icon"></div>
-      <h3>AWS Cloud Foundations Bootcamp</h3>
-      <p>3-day intensive covering EC2, S3, IAM, and deploying your first cloud app. <br><strong>Date:</strong> TBA</p>
+  <div class="container">
+    
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all" data-target-container=".timeline">All Events</button>
+      <button class="filter-btn" data-filter="workshop" data-target-container=".timeline">Workshops</button>
+      <button class="filter-btn" data-filter="hackathon" data-target-container=".timeline">Hackathons</button>
+      <button class="filter-btn" data-filter="seminar" data-target-container=".timeline">Seminars</button>
+      <button class="filter-btn" data-filter="certification" data-target-container=".timeline">Certification</button>
     </div>
-    <div class="card">
-      <div class="icon"></div>
-      <h3>Campus Hackathon 2026</h3>
-      <p>48-hour build sprint — teams ship a working cloud-powered project judged by industry mentors. <br><strong>Date:</strong> TBA</p>
+
+    <h3 style="margin-bottom: 30px; text-align: center;">Upcoming Events</h3>
+    <div class="timeline">
+      
+      <div class="timeline-item filter-item" data-category="workshop">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">TBA</div>
+          <h4>AWS Cloud Foundations Bootcamp</h4>
+          <p style="color: var(--ink-muted); margin-top: 8px; font-size: 14px;">3-day intensive covering EC2, S3, IAM, and deploying your first cloud app.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item filter-item" data-category="hackathon">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">TBA</div>
+          <h4>Campus Hackathon 2026</h4>
+          <p style="color: var(--ink-muted); margin-top: 8px; font-size: 14px;">48-hour build sprint — teams ship a working cloud-powered project judged by industry mentors.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item filter-item" data-category="certification">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">TBA</div>
+          <h4>AWS Cloud Practitioner Certification Drive</h4>
+          <p style="color: var(--ink-muted); margin-top: 8px; font-size: 14px;">Study group and resources for passing the AWS Certified Cloud Practitioner exam.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item filter-item" data-category="seminar">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">TBA</div>
+          <h4>Tech Talk: AI on AWS</h4>
+          <p style="color: var(--ink-muted); margin-top: 8px; font-size: 14px;">Monthly talks from AWS Community Builders and alumni working in cloud/DevOps roles. Focus on Amazon Bedrock.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item filter-item" data-category="competition">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">TBA</div>
+          <h4>Project Showcase 2026</h4>
+          <p style="color: var(--ink-muted); margin-top: 8px; font-size: 14px;">End of year showcase where student builders present their cloud and AI projects.</p>
+        </div>
+      </div>
+
     </div>
-    <div class="card">
-      <div class="icon">🎤</div>
-      <h3>Guest Speaker Series</h3>
-      <p>Monthly talks from AWS Community Builders and alumni working in cloud/DevOps roles. <br><strong>Date:</strong> TBA</p>
+    
+    <div style="margin-top: 60px; text-align: center;">
+      <h3 style="margin-bottom: 20px;">Past Events</h3>
+      <p style="color: var(--ink-muted);">Stay tuned for our first events!</p>
     </div>
+
   </div>
-  <p style="text-align:center; color:var(--ink-muted); margin-top:20px; font-size:13px;">
-    Edit this section directly in events.html to add your real event dates, or convert it into a CMS-driven list later.
-  </p>
 </section>
 
 <footer id="footer-placeholder"></footer>
