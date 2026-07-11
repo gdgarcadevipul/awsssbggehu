@@ -7,25 +7,61 @@ document.addEventListener('DOMContentLoaded', () => {
   if (savedTheme) root.setAttribute('data-theme', savedTheme);
 
   themeToggle?.addEventListener('click', () => {
-    const current = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', current);
-    localStorage.setItem('sbg-theme', current);
-    themeToggle.textContent = current === 'dark' ? '☀️' : '🌙';
+    const toggle = () => {
+      const current = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', current);
+      localStorage.setItem('sbg-theme', current);
+      // themeToggle.textContent = current === 'dark' ? '☀️' : '🌙';
+    };
+
+    if (!document.startViewTransition) {
+      toggle();
+      return;
+    }
+
+    const cloudPathD = 'M 0 -25 C -10 -25 -17 -18 -17 -10 C -28 -10 -35 -2 -35 8 C -35 18 -27 25 -17 25 L 17 25 C 27 25 35 18 35 8 C 35 -1 29 -8 20 -10 C 20 -18 12 -25 0 -25 Z';
+    const maskSvgData = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100"><path fill="black" d="${cloudPathD}"/></svg>`;
+    const borderSvgData = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100"><style>.cloud-path{fill:none;stroke:%230062FD;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60 140;animation:cloud-dash 1.5s linear infinite;}@keyframes cloud-dash{0%{stroke-dashoffset:200;}100%{stroke-dashoffset:0;}}</style><path class="cloud-path" d="${cloudPathD}"/></svg>`;
+    document.documentElement.style.setProperty('--cloud-mask', `url('${maskSvgData}')`);
+    document.documentElement.style.setProperty('--animated-cloud', `url('${borderSvgData}')`);
+
+    let dummy = document.getElementById('vt-cloud-dummy');
+    if (!dummy) {
+      dummy = document.createElement('div');
+      dummy.id = 'vt-cloud-dummy';
+      dummy.style.cssText = 'view-transition-name: cloud-border; position: fixed; opacity: 0; pointer-events: none;';
+      document.body.appendChild(dummy);
+    }
+
+    document.startViewTransition(() => {
+      toggle();
+    });
   });
-  if (themeToggle) themeToggle.textContent = root.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
 
   // ---- Mobile nav toggle ----
   const menuToggle = document.querySelector('.menu-toggle');
+  const navbar = document.querySelector('.navbar');
   const navLinks = document.querySelector('.nav-links');
+  
   menuToggle?.addEventListener('click', (e) => {
     e.stopPropagation();
-    navLinks.classList.toggle('mobile-open');
+    navbar.classList.toggle('mobile-open');
+    document.body.classList.toggle('mobile-menu-active');
   });
 
-  // Close mobile nav on outside click
+  // Close mobile nav when a link is clicked
+  navLinks?.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      navbar.classList.remove('mobile-open');
+      document.body.classList.remove('mobile-menu-active');
+    }
+  });
+
+  // Close mobile nav on outside click (fallback)
   document.addEventListener('click', (e) => {
-    if (navLinks?.classList.contains('mobile-open') && !navLinks.contains(e.target) && e.target !== menuToggle) {
-      navLinks.classList.remove('mobile-open');
+    if (navbar?.classList.contains('mobile-open') && !navbar.contains(e.target) && e.target !== menuToggle) {
+      navbar.classList.remove('mobile-open');
+      document.body.classList.remove('mobile-menu-active');
     }
   });
 
@@ -66,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
       img.classList.add('broken');
       const placeholder = document.createElement('div');
       placeholder.className = 'photo-placeholder';
-      placeholder.innerHTML = `<span class="cam">📷</span><span>${img.dataset.fallback}</span>`;
+      placeholder.innerHTML = `<span class="cam"></span><span>${img.dataset.fallback}</span>`;
       img.parentElement.appendChild(placeholder);
     });
   });
@@ -74,13 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- Lightbox for gallery ----
   const lightbox = document.querySelector('.lightbox');
   const lightboxImg = lightbox?.querySelector('img');
-  
+
   const openLightbox = (src) => {
     if (!lightbox) return;
     lightboxImg.src = src;
     lightbox.classList.add('active');
   };
-  
+
   const closeLightbox = () => {
     if (!lightbox) return;
     lightbox.classList.remove('active');
@@ -92,10 +128,10 @@ document.addEventListener('DOMContentLoaded', () => {
       openLightbox(img.src);
     });
   });
-  
+
   document.querySelector('.lightbox-close')?.addEventListener('click', closeLightbox);
   lightbox?.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-  
+
   // Escape key for lightbox
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && lightbox?.classList.contains('active')) {

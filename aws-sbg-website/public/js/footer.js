@@ -2,7 +2,7 @@ document.getElementById('footer-placeholder').innerHTML = `
   <div class="footer-grid">
     <div>
       <div class="brand" style="margin-bottom:14px;">
-        <img src="assets/images/logo.svg" alt="Logo" style="width:34px;" onerror="this.style.display='none'">
+        <img src="assets/images/logo.png" alt="Logo" class="logo-main" style="width:34px;">
         <div class="brand-text">
           <div class="name">AWS STUDENT BUILDER GROUP</div>
           <div class="sub">at Graphic Era Hill University — Bhimtal Campus</div>
@@ -30,15 +30,19 @@ document.getElementById('footer-placeholder').innerHTML = `
     <div>
       <h4>Connect</h4>
       <ul>
-        <li><a href="mailto:awssbg.gehu@example.com">Email Us</a></li>
+        <li><a href="mailto:awssbggehu@gmail.com">Email Us</a></li>
         <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Meetup</a></li>
+        <li><a href="https://www.instagram.com/awssbggehu?igsh=OHYweTU1bWVvejM=">Instagram</a></li>
+      
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p style="margin-bottom: 8px;">Graphic Era Hill University, Bhimtal Campus, Nainital, Uttarakhand</p>
+    <p style="margin-bottom: 12px; font-size: 13px;">
+      <a href="https://aws.amazon.com/privacy/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Privacy Policy</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
+      <a href="https://aws.amazon.com/events/terms/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Terms & Conditions</a>
+    </p>
     © ${new Date().getFullYear()} AWS Student Builder Group — Graphic Era Hill University. Built by student builders.
   </div>
 `;
